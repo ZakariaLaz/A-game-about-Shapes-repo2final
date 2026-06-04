@@ -1,21 +1,35 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/*
-This script is for automatically loading the next scene in
-the Build settings when the flagpole is touched. Make
-sure the scenes are in the right order.
-*/
-
-
 public class FlagpoleSceneLoaderAuto : MonoBehaviour
 {
+    private bool loadingScene = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
+
+        Debug.Log("Something touched the flagpole: " + other.name);
+
+        if (loadingScene) return;
+
         if (other.CompareTag("Player"))
         {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex + 1);
+            loadingScene = true;
+
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+            ScreenFade screenFade = FindFirstObjectByType<ScreenFade>();
+
+            if (screenFade == null)
+            {
+                Debug.LogError("No ScreenFade object found in this scene!");
+                SceneManager.LoadScene(nextSceneIndex);
+                return;
+            }
+
+            Debug.Log("Flagpole touched. Starting fade.");
+            screenFade.StartFadeToScene(nextSceneIndex);
         }
     }
 }
+

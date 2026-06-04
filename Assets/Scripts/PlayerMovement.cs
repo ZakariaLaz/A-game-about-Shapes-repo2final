@@ -155,7 +155,7 @@ private void OnTriggerEnter2D(Collider2D collision)
         Instantiate(deathExplosion, transform.position, transform.rotation);
     }
     
-
+      /*
     if (collision.CompareTag("Goal"))
     {
 StartCoroutine(
@@ -163,7 +163,7 @@ StartCoroutine(
         .FadeOut(SceneManager.GetActiveScene().buildIndex + 1)
     );
     }
-
+    */
     
   
 
@@ -226,7 +226,7 @@ private void Flip()
             isWallSliding = true;
            // rb.linearVelocity = new Vector2(0f, Mathf.Clamp(rb.linearVelocity.y, -wallSlidingSpeed, float.MaxValue));
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlidingSpeed, float.MaxValue));
-            Debug.Log("Wall Slide True");
+            
 
             if ((isFacingRight) || (!isFacingRight))
     {
@@ -236,7 +236,7 @@ private void Flip()
         else
         {
             isWallSliding = false;
-            Debug.Log("Wall Slide False");
+            
         }
     }
 

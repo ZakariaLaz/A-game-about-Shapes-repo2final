@@ -5,44 +5,63 @@ using UnityEngine.SceneManagement;
 
 public class ScreenFade : MonoBehaviour
 {
+    public static ScreenFade Instance;
+
     public Image fadeImage;
     public float fadeDuration = 1f;
 
+    private bool isTransitioning = false;
+
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
         DontDestroyOnLoad(gameObject);
 
         fadeImage.color = new Color(0, 0, 0, 0);
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    public IEnumerator FadeOut(int sceneIndex)
+    public void StartFadeToScene(int sceneIndex)
+    {
+        if (!isTransitioning)
+        {
+            StartCoroutine(FadeToScene(sceneIndex));
+        }
+    }
+
+    private IEnumerator FadeToScene(int sceneIndex)
+    {
+        isTransitioning = true;
+
+        yield return StartCoroutine(FadeOut());
+
+        SceneManager.LoadScene(sceneIndex);
+
+        yield return null;
+
+        yield return StartCoroutine(FadeIn());
+
+        isTransitioning = false;
+    }
+
+    private IEnumerator FadeOut()
     {
         float timer = 0f;
 
-        // Fade to black
         while (timer < fadeDuration)
         {
             timer += Time.deltaTime;
-
             float alpha = timer / fadeDuration;
-
             fadeImage.color = new Color(0, 0, 0, alpha);
-
             yield return null;
         }
 
-        // Fully black
         fadeImage.color = new Color(0, 0, 0, 1);
-
-        // Load scene
-        SceneManager.LoadScene(sceneIndex);
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        StartCoroutine(FadeIn());
     }
 
     private IEnumerator FadeIn()
@@ -52,19 +71,11 @@ public class ScreenFade : MonoBehaviour
         while (timer > 0f)
         {
             timer -= Time.deltaTime;
-
             float alpha = timer / fadeDuration;
-
             fadeImage.color = new Color(0, 0, 0, alpha);
-
             yield return null;
         }
 
         fadeImage.color = new Color(0, 0, 0, 0);
-    }
-
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
