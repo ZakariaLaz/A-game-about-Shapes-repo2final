@@ -40,7 +40,19 @@ public class VictoryScreen : MonoBehaviour
         PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_Cleared", 1);
         PlayerPrefs.Save();
 
-        Debug.Log("Saving completion for: " + SceneManager.GetActiveScene().name);
+        
+    string levelName = SceneManager.GetActiveScene().name;
+    string bestTimeKey = levelName + "_BestTime";
+
+if (!PlayerPrefs.HasKey(bestTimeKey) || levelTimer < PlayerPrefs.GetFloat(bestTimeKey))
+{
+    PlayerPrefs.SetFloat(bestTimeKey, levelTimer);
+}
+
+PlayerPrefs.SetInt(levelName + "_Cleared", 1);
+PlayerPrefs.Save();
+
+
     }
 
     public void NextLevel()
@@ -53,6 +65,6 @@ public class VictoryScreen : MonoBehaviour
     public void LevelSelect()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene("LevelSelect");
     }
 }
