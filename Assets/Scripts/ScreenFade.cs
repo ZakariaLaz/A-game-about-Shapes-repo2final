@@ -55,7 +55,7 @@ public class ScreenFade : MonoBehaviour
 
         while (timer < fadeDuration)
         {
-            timer += Time.deltaTime;
+            timer += Time.unscaledDeltaTime;
             float alpha = timer / fadeDuration;
             fadeImage.color = new Color(0, 0, 0, alpha);
             yield return null;
@@ -70,7 +70,7 @@ public class ScreenFade : MonoBehaviour
 
         while (timer > 0f)
         {
-            timer -= Time.deltaTime;
+            timer -= Time.unscaledDeltaTime;
             float alpha = timer / fadeDuration;
             fadeImage.color = new Color(0, 0, 0, alpha);
             yield return null;
