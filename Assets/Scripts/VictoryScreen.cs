@@ -36,6 +36,11 @@ public class VictoryScreen : MonoBehaviour
 
         victoryPanel.SetActive(true);
         Time.timeScale = 0f;
+
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_Cleared", 1);
+        PlayerPrefs.Save();
+
+        Debug.Log("Saving completion for: " + SceneManager.GetActiveScene().name);
     }
 
     public void NextLevel()
