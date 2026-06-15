@@ -161,8 +161,11 @@ private void OnTriggerEnter2D(Collider2D collision)
 {
     if (collision.CompareTag("Spikes"))
     {
-        Destroy(gameObject);
         Instantiate(deathExplosion, transform.position, transform.rotation);
+
+    FindFirstObjectByType<DeathScreen>().ShowDeathScreen();
+
+    gameObject.SetActive(false);
     }
     
       /*
