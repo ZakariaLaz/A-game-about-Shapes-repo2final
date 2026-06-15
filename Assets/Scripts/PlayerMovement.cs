@@ -114,7 +114,17 @@ void Update()
 
 isGrounded = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundLayer); 
 isEnemyhead = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, EnemyheadLayer); 
-rb.linearVelocityX = move * speed; 
+if (!isWallJumping)
+{
+    if (IsWalled() && !isGrounded)
+    {
+        rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+    }
+    else
+    {
+        rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
+    }
+}
 
 if (!wasGrounded && isGrounded)
 {
@@ -218,27 +228,22 @@ private void Flip()
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
-    private void WallSlide()
+private void WallSlide()
+{
+    if (IsWalled() && !isGrounded && move != 0f)
     {
-        // if (IsWalled() && !isGrounded && horizontal != 0f)
-         if (IsWalled() && !isGrounded)
-        {
-            isWallSliding = true;
-           // rb.linearVelocity = new Vector2(0f, Mathf.Clamp(rb.linearVelocity.y, -wallSlidingSpeed, float.MaxValue));
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlidingSpeed, float.MaxValue));
-            
+        isWallSliding = true;
 
-            if ((isFacingRight) || (!isFacingRight))
+        rb.linearVelocity = new Vector2(
+            rb.linearVelocity.x,
+            Mathf.Clamp(rb.linearVelocity.y, -wallSlidingSpeed, float.MaxValue)
+        );
+    }
+    else
     {
-        rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        isWallSliding = false;
     }
-        }
-        else
-        {
-            isWallSliding = false;
-            
-        }
-    }
+}
 
 private void WallJump()
     {

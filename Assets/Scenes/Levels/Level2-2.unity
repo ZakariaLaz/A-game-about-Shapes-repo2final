@@ -774,6 +774,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUse
       objectReference: {fileID: 0}
+    - target: {fileID: 3568042642657552201, guid: cc0787a6ecf303d45b3b7581446515aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568042642657552201, guid: cc0787a6ecf303d45b3b7581446515aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 4258303498152538280, guid: cc0787a6ecf303d45b3b7581446515aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.15
@@ -822,6 +830,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7124983530567109870, guid: cc0787a6ecf303d45b3b7581446515aa, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: b7953c9cc3f018243ad6d04871ffa443, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -948,9 +960,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1642951561435130941, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 633665627}
+    - target: {fileID: 1642951561435130941, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelSelect
+      objectReference: {fileID: 0}
     - target: {fileID: 3825137916743292936, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_Name
       value: VictoryScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321047463926105952, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 633665627}
+    - target: {fileID: 5321047463926105952, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
       objectReference: {fileID: 0}
     - target: {fileID: 7425878349176456141, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_Pivot.x
@@ -1469,6 +1497,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48e3885dac775f34f86735110b2fc725, type: 3}
+--- !u!114 &633665627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3156426452654783701, guid: 28c81b93aad1b4c47a6eaec83d08bd93, type: 3}
+  m_PrefabInstance: {fileID: 1180545067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958ba8190328e234e9b9b02a733ea988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VictoryScreen
 --- !u!1001 &657051645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1828,6 +1867,10 @@ PrefabInstance:
     - target: {fileID: 3618190173190712475, guid: 360deacefea21744b82638f4d0bc55a0, type: 3}
       propertyPath: m_Name
       value: ScreenFadeManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712681246494081708, guid: 360deacefea21744b82638f4d0bc55a0, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5978141827988855738, guid: 360deacefea21744b82638f4d0bc55a0, type: 3}
       propertyPath: m_Pivot.x

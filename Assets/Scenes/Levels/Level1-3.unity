@@ -582,6 +582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenFadeManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4712681246494081708, guid: 360deacefea21744b82638f4d0bc55a0, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5978141827988855738, guid: 360deacefea21744b82638f4d0bc55a0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
