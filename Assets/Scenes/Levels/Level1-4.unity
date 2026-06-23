@@ -1038,19 +1038,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1642951561435130941, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1642951561435130941, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1877936890}
+      objectReference: {fileID: 974045407}
     - target: {fileID: 1642951561435130941, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: LevelSelect
       objectReference: {fileID: 0}
     - target: {fileID: 1642951561435130941, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoading, Assembly-CSharp
+      value: VictoryScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3825137916743292936, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_Name
@@ -1058,19 +1058,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5321047463926105952, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5321047463926105952, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1877936890}
+      objectReference: {fileID: 974045407}
     - target: {fileID: 5321047463926105952, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: NextLevel
       objectReference: {fileID: 0}
     - target: {fileID: 5321047463926105952, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoading, Assembly-CSharp
+      value: VictoryScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5321047463926105952, guid: 29fa9ce8d9f728f4c99452424fc63a55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -1238,6 +1238,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 752589a0536782743aa7d384a5c1a368, type: 3}
+--- !u!114 &974045407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3156426452654783701, guid: 28c81b93aad1b4c47a6eaec83d08bd93, type: 3}
+  m_PrefabInstance: {fileID: 1682154721}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958ba8190328e234e9b9b02a733ea988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VictoryScreen
 --- !u!1001 &1002096409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1437,6 +1448,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3032786475194802929, guid: 2910d349df8faab4abfa5a778c138f73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267216088400840484, guid: 2910d349df8faab4abfa5a778c138f73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3704814670706294903, guid: 2910d349df8faab4abfa5a778c138f73, type: 3}
       propertyPath: m_Name
       value: DeathScreen
@@ -1456,6 +1475,10 @@ PrefabInstance:
     - target: {fileID: 6282540972714536383, guid: 2910d349df8faab4abfa5a778c138f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531966243287656980, guid: 2910d349df8faab4abfa5a778c138f73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7767962145426637325, guid: 2910d349df8faab4abfa5a778c138f73, type: 3}
       propertyPath: m_Pivot.x
@@ -2348,17 +2371,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3334693adce1904faa16b03036f90a9, type: 3}
---- !u!114 &1877936890 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5994194167910919852, guid: c3334693adce1904faa16b03036f90a9, type: 3}
-  m_PrefabInstance: {fileID: 1877936889}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daf5cefd403f4e14a9d8342d39b6e3b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneLoading
 --- !u!1 &1918942472
 GameObject:
   m_ObjectHideFlags: 0
