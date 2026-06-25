@@ -29,7 +29,7 @@ public class ScreenFade : MonoBehaviour
     public void StartFadeToScene(int sceneIndex)
     {
 
-          Debug.Log("Fade started to scene index: " + sceneIndex);
+          
         if (!isTransitioning)
         {
             StartCoroutine(FadeToScene(sceneIndex));
